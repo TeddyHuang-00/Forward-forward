@@ -1,0 +1,12 @@
+"""Hyperparameters for the forward-forward model"""
+DEVICE = "cuda"
+DIMS = [512, 256, 128]
+EPOCH = 20
+EPSILON = 1e-9
+LEARNING_RATE = 0.01
+LOG_INTERVAL = 10
+LOG_LEVEL = "INFO"
+SEED = 2023
+TEST_BATCH_SIZE = 2048
+THRESHOLD = 2
+TRAIN_BATCH_SIZE = 64
