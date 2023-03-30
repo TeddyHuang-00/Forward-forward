@@ -141,7 +141,12 @@ if __name__ == "__main__":
             y = y.to(DEVICE)
             # Making fast alternation between postive and negative
             model.trainOn(x, y)
-            model.trainOn(x, y[torch.randperm(x.shape[0])], False)
+            model.trainOn(
+                x,
+                # Make sure the false labels are different from the true ones
+                (y + (torch.rand(x.shape[0]) * 8 + 1).round().to(DEVICE)) % 10,
+                False,
+            )
             if i == 0 or (i + 1) % LOG_INTERVAL == 0 or i + 1 == len(train_loader):
                 error_rate = (model.predict(x) != y).float().mean()
                 LOGGER.info(
