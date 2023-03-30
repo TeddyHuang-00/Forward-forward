@@ -4,6 +4,6 @@ Implementation of the forward-forward algorithm proposed in the paper [1](https:
 
 ## Result
 
-Trained on the MNIST dataset for 20 epochs, the model achieves ~90% accuracy on the test set.
+Trained on the MNIST dataset for 20 epochs, the model achieves ~95% accuracy on the test set.
 
 ![](fig/512_256_128.png)
